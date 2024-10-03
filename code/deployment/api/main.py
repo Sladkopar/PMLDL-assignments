@@ -36,7 +36,7 @@ class CNNClassificationModel(nn.Module):
 
 # Loading the pre-trained model
 model = CNNClassificationModel()
-model.load_state_dict(torch.load('best.pt', map_location=torch.device('cpu'), weights_only=True))
+model.load_state_dict(torch.load('/app/models/best.pt', map_location=torch.device('cpu'), weights_only=True))
 model.eval()
 
 # Defining transformations for the input image

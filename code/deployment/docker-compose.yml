@@ -6,6 +6,8 @@ services:
       context: ./api
     ports:
       - "80:80"
+    volumes:
+      - ${PWD}/../../models:/app/models
 
   app:
     build:
@@ -14,3 +16,5 @@ services:
       - "8501:8501"
     depends_on:
       - api
+    volumes:
+      - ${PWD}/../../models:/app/models
