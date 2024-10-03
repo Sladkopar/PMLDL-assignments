@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: ./api
+    ports:
+      - "80:80"
+
+  app:
+    build:
+      context: ./app
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api
