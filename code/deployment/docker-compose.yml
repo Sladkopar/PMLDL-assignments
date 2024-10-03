@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: ./api
+    ports:
+      - "80:80"
+    volumes:
+      - ${PWD}/../../models:/app/models
+
+  app:
+    build:
+      context: ./app
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api
+    volumes:
+      - ${PWD}/../../models:/app/models
